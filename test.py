@@ -67,4 +67,3 @@ def build_min_heap(A):
 print(build_min_heap(A))
 print(A)
 
-#nvjhg
