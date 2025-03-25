@@ -13,11 +13,11 @@ def insert(A, e):
     Maintains the min-heap property by percolating up.
     """
     A.append(e)
-    i = len(A) - 1
-    while i > 0 and A[parent(i)] > A[i]:
+    i = len(A) - 1 # Index of e
+    while i > 0 and A[parent(i)] > A[i]: # While parent is bigger
         p = parent(i)
-        A[i], A[p] = A[p], A[i]
-        i = p
+        A[i], A[p] = A[p], A[i] # Switch parent and child
+        i = p # New index of e is i bc it moved up
 
 def extractMin(A):
     """
@@ -26,9 +26,9 @@ def extractMin(A):
     """
     if len(A) == 1:
         return A.pop()
-    min_elem = A[0]
-    A[0] = A.pop()
-    min_heapify(A, 0)
+    min_elem = A[0] # We take out the root as the smallest element
+    A[0] = A.pop() # We use the last element to become the root, O(1)
+    min_heapify(A, 0) # This takes O(log n)
     return min_elem
 
 def min_heapify(A, i):
@@ -63,5 +63,5 @@ if __name__ == "__main__":
         except:
             pass
     
-    while pq:
+    while pq: #while its not empty
         print(extractMin(pq))
