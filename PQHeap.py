@@ -9,7 +9,7 @@ def createEmptyPQ():
 
 def insert(A, e):
     """
-    Insert element `e` into the priority queue `A`.
+    Insert element e into the priority queue A.
     Maintains the min-heap property by percolating up.
     """
     A.append(e)
@@ -21,7 +21,7 @@ def insert(A, e):
 
 def extractMin(A):
     """
-    Remove and return the smallest element from the priority queue `A`.
+    Remove and return the smallest element from the priority queue A.
     Maintains the min-heap property by percolating down.
     """
     if len(A) == 1:
@@ -33,7 +33,7 @@ def extractMin(A):
 
 def min_heapify(A, i):
     """
-    Ensure the subtree rooted at index `i` maintains the min-heap property.
+    Ensure the subtree rooted at index i maintains the min-heap property.
     This is a recursive downward operation.
     """
     left = 2 * i + 1
@@ -50,7 +50,7 @@ def min_heapify(A, i):
         min_heapify(A, smallest) # Continue heapify downward
 
 def parent(i):
-    """Return the index of the parent node for node at index `i`."""
+    """Return the index of the parent node for node at index i."""
     return (i - 1) // 2
 
 # Just to test the code from terminal until we get the PQSort.py file
