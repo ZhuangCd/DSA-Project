@@ -53,7 +53,7 @@ def parent(i):
     """Return the index of the parent node for node at index `i`."""
     return (i - 1) // 2
 
-
+# Just to test the code from terminal until we get the PQSort.py file
 if __name__ == "__main__":
     pq = createEmptyPQ()
     
