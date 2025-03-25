@@ -40,14 +40,14 @@ def min_heapify(A, i):
     right = 2 * i + 2
     smallest = i
 
-    if left < len(A) and A[left] < A[smallest]:
-        smallest = left
+    if left < len(A) and A[left] < A[smallest]: # If left child smaller than parent 
+        smallest = left # Assign smallest to the value of a child
     if right < len(A) and A[right] < A[smallest]:
         smallest = right
 
-    if smallest != i:
-        A[i], A[smallest] = A[smallest], A[i]
-        min_heapify(A, smallest)
+    if smallest != i: # Here if the smallest have been changed to child's index then:
+        A[i], A[smallest] = A[smallest], A[i] # Switch element and child
+        min_heapify(A, smallest) # Continue heapify downward
 
 def parent(i):
     """Return the index of the parent node for node at index `i`."""
