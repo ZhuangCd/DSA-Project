@@ -60,19 +60,20 @@ class DictBinTree():
         return result
             
 
-first_tree = DictBinTree()
-first_tree.insert(BinNode(5))
-first_tree.insert(BinNode(10))
-first_tree.insert(BinNode(15))
-first_tree.insert(BinNode(2))
-first_tree.insert(BinNode(7))
-first_tree.insert(BinNode(11))
-first_tree.insert(BinNode(16))
-
-print(first_tree.orderedTraversal())
-
-
-print(first_tree.search(8))
 
 if __name__ == "__main__":
-    
+    first_tree = DictBinTree()
+    first_tree.insert(BinNode(5))
+    first_tree.insert(BinNode(10))
+    first_tree.insert(BinNode(15))
+    first_tree.insert(BinNode(2))
+    first_tree.insert(BinNode(7))
+    first_tree.insert(BinNode(11))
+    first_tree.insert(BinNode(16))
+
+    print(first_tree.orderedTraversal())
+
+
+    print(first_tree.search(8))
+
+
