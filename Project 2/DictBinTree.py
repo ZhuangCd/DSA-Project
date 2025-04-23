@@ -1,11 +1,12 @@
-class BinNode():
+class BinNode:
 
     def __init__(self, k):
         self.key = k
         self.left = None
         self.right = None
 
-class DictBinTree():
+
+class DictBinTree:
 
     def __init__(self):
         self.root = None
@@ -19,13 +20,11 @@ class DictBinTree():
                 return False
             else:
                 return True
-            
+
         if k < x.key:
             return self._search(x.left, k)
-        else: 
+        else:
             return self._search(x.right, k)
-        
-    
 
     def insert(self, z):
         return self._insert(self.root, z)
@@ -44,9 +43,8 @@ class DictBinTree():
             self.root = z
         elif z.key < y.key:
             y.left = z
-        else: 
+        else:
             y.right = z
-            
 
     def orderedTraversal(self):
         return self._orderedTraversal(self.root)
@@ -58,7 +56,6 @@ class DictBinTree():
             result.append(x.key)
             result += self._orderedTraversal(x.right)
         return result
-            
 
 
 if __name__ == "__main__":
@@ -73,7 +70,4 @@ if __name__ == "__main__":
 
     print(first_tree.orderedTraversal())
 
-
     print(first_tree.search(8))
-
-

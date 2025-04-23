@@ -6,9 +6,6 @@ tree = DictBinTree()
 for line in sys.stdin:
     tree.insert(BinNode(int(line)))
 
-print(tree.orderedTraversal())  
+print(tree.orderedTraversal())
 
 # run with : Get-Content input.txt | python Treesort.py > output.txt
-
-
-
