@@ -15,11 +15,17 @@ class DictBinTree():
 
     def _search(self, x, k):
         if x == None or k == x.key:
-            return x
+            if x == None:
+                return False
+            else:
+                return True
+            
         if k < x.key:
             return self._search(x.left, k)
         else: 
             return self._search(x.right, k)
+        
+    
 
     def insert(self, z):
         return self._insert(self.root, z)
@@ -64,3 +70,9 @@ first_tree.insert(BinNode(11))
 first_tree.insert(BinNode(16))
 
 print(first_tree.orderedTraversal())
+
+
+print(first_tree.search(8))
+
+if __name__ == "__main__":
+    
