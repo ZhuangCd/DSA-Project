@@ -1,6 +1,3 @@
-# Project Part I – DSK814
-# Group members: Egok Shameek, Nóra Balogh
-
 import sys
 
 

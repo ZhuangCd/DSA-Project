@@ -38,7 +38,7 @@ class DictBinTree:
                 x = x.left
             else:
                 x = x.right
-        # z.p = y  # because your project does not require storing parent pointers in the tree nodes.
+        # z.p = y  # because our project does not require storing parent pointers in the tree nodes.
         if y == None:
             self.root = z
         elif z.key < y.key:
