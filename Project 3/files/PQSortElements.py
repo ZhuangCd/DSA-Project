@@ -1,24 +1,22 @@
-# Eksempelprogram, som viser brugen af Element sammen med PQHeap.py fra del I.
-
 import sys
-import PQHeap # Dette er gruppens PQHeap.py fra del I.
+import PQHeap  # This is the group's PQHeap.py from Part I.
 from Element import Element
 
-pq = PQHeap.createEmptyPQ() # Opret en tom prioritetskø.
+pq = PQHeap.createEmptyPQ()  # Create an empty priority queue.
 
 for line in sys.stdin:
-    # Man opretter et nyt element med kaldet Element(key,data), som
-    # sætter værdier i dets felter key og data. Dette vises her med et
-    # heltal som key og en tilfældig string som data. I del III skal
-    # data i stedet være træer (se projektbeskrivelsen for del III).
-    e = Element(int(line),"Some appropriate data")
-    # Indsæt det nye Element i prioritetskøen.
-    PQHeap.insert(pq,e)
+    # A new element is created with the call Element(key, data), which
+    # sets values in its key and data fields. This is shown here with an
+    # integer as key and an arbitrary string as data. In Part III, data
+    # should instead be trees (see the project description for Part III).
+    e = Element(int(line), "Some appropriate data")
+    # Insert the new Element into the priority queue.
+    PQHeap.insert(pq, e)
 
 while len(pq) > 0:
-    # Udtag det Element fra prioritetskøen, som har mindste key.
+    # Extract the Element from the priority queue with the smallest key.
     e = PQHeap.extractMin(pq)
-    # Tilgå og print dets felter key og data.
+    # Access and print its fields key and data.
     extractedKey = e.key
     extractedData = e.data
     print(extractedKey)
