@@ -1,6 +1,8 @@
 import bitIO
 import sys
 
+# Demonstration of bitIO library
+
 # Test program to:
 #
 #   1) Demonstrate standard usage of bitIO.BitReader and
