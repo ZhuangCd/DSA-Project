@@ -4,8 +4,8 @@ from functools import total_ordering
 class Element:
 
     def __init__(self,key,data):
-        self.key = key
-        self.data = data
+        self.key = key #frequency
+        self.data = data #data (node)
 
     def __eq__(self,other):
         return self.key == other.key

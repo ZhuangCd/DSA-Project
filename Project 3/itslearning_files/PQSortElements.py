@@ -11,11 +11,11 @@ for line in sys.stdin:
     # should instead be trees (see the project description for Part III).
     e = Element(int(line), "Some appropriate data")
     # Insert the new Element into the priority queue.
-    PQHeap.insert(pq, e)
+    pq.insert(e)
 
-while len(pq) > 0:
+while not pq.is_empty():
     # Extract the Element from the priority queue with the smallest key.
-    e = PQHeap.extractMin(pq)
+    e = pq.extractMin()
     # Access and print its fields key and data.
     extractedKey = e.key
     extractedData = e.data

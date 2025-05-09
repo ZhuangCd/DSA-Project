@@ -77,7 +77,7 @@ class PriorityQueue:
     
 def createEmptyPQ():
     """Return an empty priority queue"""
-    return []
+    return PriorityQueue() 
 
 
 if __name__ == "__main__":
