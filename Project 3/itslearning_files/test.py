@@ -16,9 +16,9 @@ import sys
 #
 # Run the program on some small text file (containing at least four
 # bytes, preferably a few more) by
-# 
+#
 #   python test.py infilename outfilename
-# 
+#
 # This will copy the infile to outfile, while adding the character '@'
 # to the end of it (after any newline, if the file ends with this),
 # and along the way write some multi-digit integer and some bits to
@@ -26,8 +26,8 @@ import sys
 # behavior.
 
 # Open input and output files, using binary mode (reading/writing bytes).
-infile = open(sys.argv[1], 'rb')
-outfile = open(sys.argv[2], 'wb')
+infile = open(sys.argv[1], "rb")
+outfile = open(sys.argv[2], "wb")
 
 # Create the BitReader/BitWriter using these files as input/output.
 bitstreamin = bitIO.BitReader(infile)
@@ -56,13 +56,13 @@ bitstreamout.writeint32bits(i)
 # bits: a while-expression going through the file until no more bits
 # are available, signaled by readsucces() returning false.
 while True:
-    bit = bitstreamin.readbit() # try to read a bit from input file
-                                # (the return value is an int, of
-                                # value either 0 or 1)
+    bit = bitstreamin.readbit()  # try to read a bit from input file
+    # (the return value is an int, of
+    # value either 0 or 1)
     if not bitstreamin.readsucces():  # End-of-file?
-        break # stop the while loop
-    bitstreamout.writebit(bit) # write the same bit to output file
-    if bit == 0: # also print a representation of the bit on the screen
+        break  # stop the while loop
+    bitstreamout.writebit(bit)  # write the same bit to output file
+    if bit == 0:  # also print a representation of the bit on the screen
         print("0")
     else:
         print("1")

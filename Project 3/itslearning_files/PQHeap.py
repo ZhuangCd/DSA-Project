@@ -74,10 +74,11 @@ class PriorityQueue:
     def is_empty(self):
         """Return True if the priority queue is empty."""
         return len(self.heap) == 0
-    
+
+
 def createEmptyPQ():
     """Return an empty priority queue"""
-    return PriorityQueue() 
+    return PriorityQueue()
 
 
 if __name__ == "__main__":

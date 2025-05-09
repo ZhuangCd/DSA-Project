@@ -3,11 +3,13 @@ from Node import Node
 from Element import Element
 from PQHeap import PriorityQueue
 
+
 def read_frequency_table(reader):
     frequencies = [0] * 256
     for i in range(256):
         frequencies[i] = reader.readint32bits()
     return frequencies
+
 
 def build_huffman_tree(frequencies):
     pq = PriorityQueue()
@@ -21,6 +23,7 @@ def build_huffman_tree(frequencies):
         merged = Node(-1, e1.data, e2.data)
         pq.insert(Element(e1.key + e2.key, merged))
     return pq.extractMin().data
+
 
 def decode_bitstream(reader, root, output_filename, total_symbols):
     with open(output_filename, "wb") as out:
@@ -37,6 +40,7 @@ def decode_bitstream(reader, root, output_filename, total_symbols):
                 out.write(bytes([node.byte]))
                 decoded_count += 1
                 node = root
+
 
 if __name__ == "__main__":
     input_file = r"Project 3\encoded.bin"
