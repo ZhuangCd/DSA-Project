@@ -57,7 +57,7 @@ def write_encoded_data(input_filename, writer, code_table):
 
 
 if __name__ == "__main__":
-    input_file = r"Project 3\test.txt"
+    input_file = r"Project 3\itslearning_files\DolphinSunset.jpg"
     output_file = r"Project 3\encoded.bin"
 
 

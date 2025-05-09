@@ -40,7 +40,7 @@ def decode_bitstream(reader, root, output_filename, total_symbols):
 
 if __name__ == "__main__":
     input_file = r"Project 3\encoded.bin"
-    output_file = r"Project 3\decoded.txt"
+    output_file = r"Project 3\decoded.jpg"
 
     with open(input_file, "rb") as f:
         reader = BitReader(f)
