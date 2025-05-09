@@ -1,6 +1,6 @@
 from Node import Node
 from Element import Element
-import PQHeap
+from PQHeap import PriorityQueue
 from bitIO import BitWriter
 
 
@@ -14,10 +14,6 @@ def build_frequency_table(filename):
             byte = f.read(1)
 
     return frequencies
-
-from PQHeap import PriorityQueue
-from Node import Node
-from Element import Element
 
 def build_huffman_tree(frequencies):
     pq = PriorityQueue()
