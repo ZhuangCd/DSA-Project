@@ -2,6 +2,7 @@ from PQHeap import PriorityQueue
 from Node import Node
 from Element import Element
 from bitIO import BitWriter
+import pandas as pd
 
 
 def build_frequency_table(input_filename):
@@ -17,7 +18,6 @@ def build_frequency_table(input_filename):
 
         return frequencies  # [0,0,1,1,0,0...]
 
-
 def build_huffman_tree(frequencies):
     pq = PriorityQueue()
 
@@ -27,14 +27,21 @@ def build_huffman_tree(frequencies):
             e = Element(frequencies[byte], node)
             pq.insert(e)
 
-        while not pq.is_empty() and len(pq.heap) > 1:
-            e1 = pq.extractMin()
-            e2 = pq.extractMin()
-            new_node = Node(-1, e1.data, e2.data)
-            new_element = Element(e1.key + e2.key, new_node)
-            pq.insert(new_element)
-        
-            return pq.extractMin().data
+    if pq.size() == 0:
+        return None  
+
+    if pq.size() == 1:
+        return pq.extractMin().data  
+
+    while pq.size() > 1:
+        e1 = pq.extractMin()
+        e2 = pq.extractMin()
+        new_node = Node(-1, e1.data, e2.data)
+        new_element = Element(e1.key + e2.key, new_node)
+        pq.insert(new_element)
+
+    return pq.extractMin().data 
+
 
 def build_code_table(node, prefix="", table=None):
     if table is None:
@@ -76,6 +83,23 @@ def compress_file(input_file, output_file):
         write_encoded_data(input_file, code_table, writer)
         writer.flush()
 
+    data = []
+    for i in range(256):
+        if frequencies[i] > 0:
+            char_repr = (
+                chr(i) if 32 <= i <= 126 else repr(chr(i))
+            ) 
+            data.append({
+                "ASCII": i,
+                "Character": char_repr,
+                "Frequency": frequencies[i],
+                "Code": code_table[i]
+            })
+
+    df = pd.DataFrame(data)
+    pd.set_option('display.max_rows', None)
+    print(df)
+
 if __name__ == "__main__":
-    compress_file("Project 3\KingJamesBible.txt","Project 3\encoded.bin" )
+    compress_file(r"Project 3\KingJamesBible.txt",r"Project 3\encoded.bin" )
     print("🏵️🏵️🏵️  Sucess man!🏵️🏵️🏵️")

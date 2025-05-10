@@ -69,5 +69,5 @@ if __name__ == "__main__":
         write_frequency_table(writer, freqs)
         write_encoded_data(input_file, writer, code_table)
         writer.flush()
-    
+
     print("🌸🌸🌸 Sucess man!🌸🌸🌸")

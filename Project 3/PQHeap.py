@@ -74,8 +74,10 @@ class PriorityQueue:
     def is_empty(self):
         """Return True if the priority queue is empty."""
         return len(self.heap) == 0
-        
     
+    def size(self):
+        """Return the number of elements in the priority queue."""
+        return len(self.heap)
 
 
 def createEmptyPQ():
